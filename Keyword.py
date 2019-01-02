@@ -56,4 +56,4 @@ if not mylists:
 print('------------------------------------------------------------------------------------------------------------')
 
 
-#pulls the new product IDs and names from Supreme EU then identifies the high product ID
+
