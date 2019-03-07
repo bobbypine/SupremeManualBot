@@ -8,7 +8,7 @@ def keysearch(key):
     starttime = time.time()
     url = 'https://www.supremenewyork.com/mobile_stock.json'
     response = requests.get(url=url)
-    data = json.loads(response.content)
+    data = json.loads(response.content.decode('utf-8'))
     mylist = []
     global mylists
     mylists = mylist
