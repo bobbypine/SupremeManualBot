@@ -9,4 +9,6 @@ When you start the program you'll be prompted to enter a keyword. Once you hit r
 
 If the product you're searching for is not found (possibly due to a late drop or site lag) the program will search for the term every half a second ten more times before finally ending.  If your keyword is found in multiple products (for example, polartec in week 19) all the products will be pulled and an individual tab will be opened for each product with that keyword. If you open your default web browser and open gmail in a tab the new tab will populate in that same browser window and gmail will still be open too, this may give you an additional advantage with captcha's at checkout. 
 
+If you're new to python and don't have an interpreter you can run the code in your computers terminal/command prompt/powershell. Download the script and the necessary modules and then open your command window and type in python3 Keyword.py and it should initiate the script. 
+
 Good luck!
