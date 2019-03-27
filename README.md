@@ -9,6 +9,8 @@ When you start the program you'll be prompted to enter keywords. You can use a s
 
 If the product you're searching for is not found (possibly due to a late drop or site lag) the program will search for the term every half a second ten more times before finally ending.  If your keyword is found in multiple products or if you search for multiple keywords (for example, polartec in week 19) all the products will be pulled and an individual tab will be opened for each product with that keyword. If you open your default web browser and open gmail in a tab the new tab will populate in that same browser window and gmail will still be open too, this may give you an additional advantage with captcha's at checkout. 
 
+When using keywords you really have to pay attendtion to how items are named. For example, during a Stone Island® or The North Face® release the '®' is part of the name, so if necessary you'll need it in your keyword too. During the SS'19 Stone Island collaboration the key phrase 'stone island® hooded' would pull the hoodie while 'stone island hooded' would yield no results. I use the Sup Comm app to keep track of droplists ahead of time to see what keywords I want to use.
+
 If you're new to python and don't have an interpreter you can run the code in your computers terminal/command prompt/powershell. Download the script and the necessary modules and then open your command window and type in python3 Keyword.py and it should initiate the script. 
 
 Good luck!
