@@ -40,7 +40,7 @@ try:
     for keyword in keylist:
         keysearch(keyword)
         if not mylists:
-            for _ in range(10):
+            for _ in range(120):
                 print('Product Not Found, Will Look Again...')
                 time.sleep(0.5)
                 keysearch(keyword)
