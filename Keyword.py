@@ -36,17 +36,18 @@ keyword = input('Enter Keyword(s), Hit Enter When Ready:').lower()
 keylist = keyword.split(",")
 print()
 
-try:
-    for keyword in keylist:
-        keysearch(keyword)
+for keyword in keylist:
+    keysearch(keyword)
+
+for _ in range(120):
+    try:
         if not mylists:
-            for _ in range(120):
-                print('Product Not Found, Will Look Again...')
-                time.sleep(0.5)
-                keysearch(keyword)
-            print('No Product Found-Program Ended')
-        print('------------------------------------------------------------------------------------------------------------')
-except Exception as e:
-    print('{}: or Webstore Closed'.format(e))
+            print('Product Not Found, Will Look Again...')
+            time.sleep(0.5)
+            keysearch(keyword)
+    except Exception as e:
+        print('{}: or Webstore Closed'.format(e))
+print('Program Ended')
+print('------------------------------------------------------------------------------------------------------------')
 
 
