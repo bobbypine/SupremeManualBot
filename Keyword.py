@@ -29,7 +29,7 @@ def keysearch(key):
                     print('.)', end = ""),
                     print(name,'-',cat, '-', price)
                     webbrowser.open(link)
-                    print('Product Found and Opened in {:.2f} Seconds'.format(time.time()-starttime))
+                    print('Product Found at {} and Opened in {:.2f} Seconds'.format(time.strftime("%I:%M:%S"), time.time()-starttime))
                     print()
 
 keyword = input('Enter Keyword(s), Hit Enter When Ready:').lower()
