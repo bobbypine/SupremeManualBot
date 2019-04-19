@@ -39,11 +39,11 @@ print()
 for keyword in keylist:
     keysearch(keyword)
 
-for _ in range(120):
+for _ in range(240):
     try:
         if not mylists:
             print('Product Not Found, Will Look Again...')
-            time.sleep(0.5)
+            time.sleep(0.25)
             keysearch(keyword)
     except Exception as e:
         print('{}: or Webstore Closed'.format(e))
