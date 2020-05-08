@@ -2,9 +2,13 @@ import webbrowser
 import json
 import requests
 import time
+import logging
 
 
 def keysearch(key):
+    logging.basicConfig(level=logging.DEBUG, filename='Supreme_Log.log', filemode='a',
+                        format = " %(asctime)s: (%(filename)s): %(levelname)s: %(funcName)s Line: %(lineno)d - %(message)s",
+                        datefmt="%m/%d/%Y %I:%M:%S %p ")
     starttime = time.time()
     url = 'https://www.supremenewyork.com/mobile_stock.json'
     response = requests.get(url=url)
@@ -20,7 +24,12 @@ def keysearch(key):
                 if keyword in result['name'].lower():
                     print('Product Found!')
                     name = result['name']
+                    logging.info(f'{name} found using {keyword}')
                     id = result['id']
+                    if str(id)[0] == '3':
+                        region = 'Supreme EU'
+                    else:
+                        region = 'Supreme US'
                     cat = result['category_name']
                     price = '${}'.format(result['price']*.01)
                     link = 'https://www.supremenewyork.com/shop/{}'.format(id)
@@ -29,8 +38,11 @@ def keysearch(key):
                     print('.)', end = ""),
                     print(name,'-',cat, '-', price)
                     webbrowser.open(link)
-                    print('Product Found at {} and Opened in {:.2f} Seconds'.format(time.strftime("%I:%M:%S"), time.time()-starttime))
+                    print('Product Found at {} and Opened in {:.2f} Seconds'.format(time.strftime("%I:%M:%S"),time.time()-starttime))
+                    logging.info('{}: Product Found at {} and Opened in {:.2f} Seconds'.format(region, time.strftime("%I:%M:%S"),time.time()-starttime))
                     print()
+
+
 
 keyword = input('Enter Keyword(s), Hit Enter When Ready:').lower()
 keylist = keyword.split(",")
@@ -39,15 +51,13 @@ print()
 for keyword in keylist:
     keysearch(keyword)
 
-for _ in range(240):
+for _ in range(600):
     try:
         if not mylists:
-            print('Product Not Found, Will Look Again...')
+            print('{}: Product Not Found for {}, Will Look Again...'.format(time.strftime("%I:%M:%S"),keyword).title())
             time.sleep(0.25)
             keysearch(keyword)
     except Exception as e:
         print('{}: or Webstore Closed'.format(e))
 print('Program Ended')
 print('------------------------------------------------------------------------------------------------------------')
-
-
