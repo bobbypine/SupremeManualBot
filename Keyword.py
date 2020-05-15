@@ -6,8 +6,8 @@ import logging
 
 
 def keysearch(key):
-    logging.basicConfig(level=logging.DEBUG, filename='Supreme_Log.log', filemode='a',
-                        format = " %(asctime)s: (%(filename)s): %(levelname)s: %(funcName)s Line: %(lineno)d - %(message)s",
+    logging.basicConfig(level=logging.INFO, filename='Supreme_Log.log', filemode='w',
+                        format = " %(asctime)s %(message)s",
                         datefmt="%m/%d/%Y %I:%M:%S %p ")
     starttime = time.time()
     url = 'https://www.supremenewyork.com/mobile_stock.json'
@@ -24,7 +24,6 @@ def keysearch(key):
                 if keyword in result['name'].lower():
                     print('Product Found!')
                     name = result['name']
-                    logging.info(f'{name} found using {keyword}')
                     id = result['id']
                     if str(id)[0] == '3':
                         region = 'Supreme EU'
@@ -39,7 +38,7 @@ def keysearch(key):
                     print(name,'-',cat, '-', price)
                     webbrowser.open(link)
                     print('Product Found at {} and Opened in {:.2f} Seconds'.format(time.strftime("%I:%M:%S"),time.time()-starttime))
-                    logging.info('{}: Product Found at {} and Opened in {:.2f} Seconds'.format(region, time.strftime("%I:%M:%S"),time.time()-starttime))
+                    logging.info('{}: {} Found Using "{}" at {} and Opened in {:.2f} Seconds'.format(region, name, keyword, time.strftime("%I:%M:%S"),time.time()-starttime))
                     print()
 
 
@@ -61,3 +60,5 @@ for _ in range(600):
         print('{}: or Webstore Closed'.format(e))
 print('Program Ended')
 print('------------------------------------------------------------------------------------------------------------')
+
+
