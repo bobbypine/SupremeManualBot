@@ -6,7 +6,7 @@ import logging
 
 
 def keysearch(key):
-    logging.basicConfig(level=logging.INFO, filename='Supreme_Log.log', filemode='w',
+    logging.basicConfig(level=logging.INFO, filename='Supreme_Log.log', filemode='a',
                         format = " %(asctime)s %(message)s",
                         datefmt="%m/%d/%Y %I:%M:%S %p ")
     starttime = time.time()
