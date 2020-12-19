@@ -42,23 +42,23 @@ def keysearch(key):
                     print()
 
 
+if __name__ == "__main__":
+    keyword = input('Enter Keyword(s), Hit Enter When Ready:').lower()
+    keylist = keyword.split(",")
+    print()
 
-keyword = input('Enter Keyword(s), Hit Enter When Ready:').lower()
-keylist = keyword.split(",")
-print()
+    for keyword in keylist:
+        keysearch(keyword)
 
-for keyword in keylist:
-    keysearch(keyword)
-
-for _ in range(600):
-    try:
-        if not mylists:
-            print('{}: Product Not Found for {}, Will Look Again...'.format(time.strftime("%I:%M:%S"),keyword).title())
-            time.sleep(0.25)
-            keysearch(keyword)
-    except Exception as e:
-        print('{}: or Webstore Closed'.format(e))
-print('Program Ended')
-print('------------------------------------------------------------------------------------------------------------')
+    for _ in range(600):
+        try:
+            if not mylists:
+                print('{}: Product Not Found for {}, Will Look Again...'.format(time.strftime("%I:%M:%S"),keyword).title())
+                time.sleep(0.25)
+                keysearch(keyword)
+        except Exception as e:
+            print('{}: or Webstore Closed'.format(e))
+    print('Program Ended')
+    print('------------------------------------------------------------------------------------------------------------')
 
 
