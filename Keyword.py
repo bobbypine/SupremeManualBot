@@ -31,7 +31,7 @@ def keysearch(key):
                         region = 'Supreme US'
                     cat = result['category_name']
                     price = '${}'.format(result['price']*.01)
-                    link = 'https://www.supremenewyork.com/shop/{}'.format(id)
+                    link = 'https://www.supremenewyork.com/shop/{}/{}'.format(x, id)
                     mylist.append(id)
                     print(len(mylist), end=""),
                     print('.)', end = ""),
